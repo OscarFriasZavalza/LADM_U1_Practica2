@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Laboratorio de Dispositivos Moviles/LADM_U1_Practica2/app/src/main/res/layout/content_main.xml" value="0.3625" />
+        <entry key="..\:/Laboratorio de Dispositivos Moviles/LADM_U1_Practica2/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Laboratorio de Dispositivos Moviles/LADM_U1_Practica2/app/src/main/res/layout/app_bar_main.xml" value="0.25" />
+        <entry key="..\:/Laboratorio de Dispositivos Moviles/LADM_U1_Practica2/app/src/main/res/layout/content_main.xml" value="0.31202046035805625" />
+        <entry key="..\:/Laboratorio de Dispositivos Moviles/LADM_U1_Practica2/app/src/main/res/layout/fragment_gallery.xml" value="0.3625" />
+        <entry key="..\:/Laboratorio de Dispositivos Moviles/LADM_U1_Practica2/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
       </map>
     </option>
   </component>
