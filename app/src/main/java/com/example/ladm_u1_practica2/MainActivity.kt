@@ -1,7 +1,10 @@
 package com.example.ladm_u1_practica2
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -12,6 +15,8 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ladm_u1_practica2.databinding.ActivityMainBinding
+import java.io.File
+import java.io.OutputStreamWriter
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,17 +26,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+        val fileName = "/data/data/mx.edu.ittepic.ladm_u1_practica2_alamacenamiento_de_archivos/files/archivo.txt"
+        var file = File(fileName)
+        var fileExists = file.exists()
+        if(fileExists){
+            Log.i("MA 42","Existe.")
+        } else {
+            Log.i("MA 44","No existe.")
+            guardarEnArchivo("Principal Pozole 60.000\nBebida Refresco 20.000")
+        }
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
-
-
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "¿Desea salir?", Snackbar.LENGTH_LONG)
-                .setAction("SI", { finish() }).show()
-        }
-
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -56,5 +65,27 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.action_settings->finish()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+    private fun guardarEnArchivo(car:String){
+        try {
+            val archivo = OutputStreamWriter(this.openFileOutput("archivo.txt", 0))
+
+            archivo.write(car)
+            archivo.flush()
+            archivo.close()
+
+        } catch (e: Exception) {
+            AlertDialog.Builder(this)
+                .setTitle("Error guardar")
+                .setMessage(e.message.toString())
+                .show()
+        }
+
     }
 }

@@ -1,6 +1,7 @@
 package com.example.ladm_u1_practica2.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.ladm_u1_practica2.AdaptadorComida
 import com.example.ladm_u1_practica2.databinding.FragmentHomeBinding
 import java.io.InputStreamReader
 import java.io.OutputStream
@@ -34,66 +37,45 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.agregar.setOnClickListener{
+        leerEnArchivo()
+        val rv = binding.recyclerComida
+        val adapter = AdaptadorComida(comidas, object : AdaptadorComida.onItemClickListenr {
+            override fun onItemClick(position: Int) {
+                Log.i("Click ReadF 44",comidas[position])
+            }
 
-        }
-
+        })
+        rv.layoutManager = LinearLayoutManager(requireContext())
+        rv.adapter = adapter
 
         return root
-    }
-    private fun leer(){
-        try {
-            var archivo=InputStreamReader(requireActivity().openFileInput("archivo.txt"))
-            var e=""
-            var listacontenido=archivo.readLines()
-            listacontenido.forEach{
-                comidas.add(it)
-                e+=it+"\n"
-            }
-            archivo.close()
-        } catch (e:Exception){
-            AlertDialog.Builder(requireContext())
-                .setTitle("error al leer")
-                .setMessage(e.message.toString())
-                .show()
-
-        }
-    }
-    private fun guardar(){
-        try{
-            comidas.clear()
-            leer()
-            var cadena=""
-            comidas.forEach {
-                cadena+=it+"\n"
-            }
-            var archivo=OutputStreamWriter(requireActivity().openFileOutput("archivo.txt",0))
-
-            cadena+=binding.tipo.text.toString().trim()+" "+
-                    binding.nombre.text.toString().trim()+" "+
-                    binding.precio.text.toString()+"\n"
-
-            archivo.write(cadena)
-            archivo.flush()
-            archivo.close()
-
-            binding.tipo.setText("")
-            binding.nombre.setText("")
-            binding.precio.setText("")
-            android.app.AlertDialog.Builder(requireContext())
-                .setMessage("Se guardo correctamente")
-                .setPositiveButton("Ok",{d,i-> d.dismiss()})
-                .show()
-        }catch (e:Exception){
-            android.app.AlertDialog.Builder(requireContext())
-                .setTitle("Error guardar")
-                .setMessage(e.message.toString())
-                .show()
-        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+
+    private fun leerEnArchivo() {
+        try {
+            val archivo = InputStreamReader(requireActivity().openFileInput("archivo.txt"))
+            comidas.removeAll(comidas)
+            var listaContenido = archivo.readLines()
+            listaContenido.forEach {
+                Log.i("Read 65 Lista", it)
+                comidas.add(it)
+            }
+
+            archivo.close()
+
+        } catch (e: Exception) {
+            android.app.AlertDialog.Builder(requireContext())
+                .setTitle("Error leer readF")
+                .setMessage(e.message.toString())
+                .show()
+            Log.i("Read 76 Lista", e.message+"")
+        }
+    }
+
 }
