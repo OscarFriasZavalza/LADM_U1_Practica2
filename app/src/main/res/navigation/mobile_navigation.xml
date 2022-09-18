@@ -8,18 +8,23 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.ladm_u1_practica2.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_catalogo"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.ladm_u1_practica2.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_agregar"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.ladm_u1_practica2.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_editar"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/eliminarFragment"
+        android:name="com.example.ladm_u1_practica2.EliminarFragment"
+        android:label="fragment_eliminar"
+        tools:layout="@layout/fragment_eliminar" />
 </navigation>
