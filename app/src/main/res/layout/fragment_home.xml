@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment"
-    android:padding="30dp">
+    android:padding="10dp">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -13,5 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,23 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:text="Nombre Platillo"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/nombreplatillo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineHeight="20sp"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:text="Tipo Platillo"
         android:textStyle="bold"
         android:textSize="20sp"/>
@@ -23,21 +40,7 @@
         android:layout_height="wrap_content"
         android:lineHeight="20sp"
         android:layout_marginBottom="5dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Nombre Platillo"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
-    <EditText
-        android:id="@+id/nombreplatillo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:lineHeight="20sp"
-        android:layout_marginBottom="5dp"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:lineHeight="20sp"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:layout_marginBottom="5dp"/>
     <Button
         android:id="@+id/agregar"

@@ -34,8 +34,9 @@ class MainActivity : AppCompatActivity() {
             Log.i("MA 42","Existe.")
         } else {
             Log.i("MA 44","No existe.")
-            guardarEnArchivo("Principal Pozole 60.000\nBebida Refresco 20.000")
+            guardarEnArchivo("Pozole Principal 90.000\nRefresco Bebida 20.000")
         }
+
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

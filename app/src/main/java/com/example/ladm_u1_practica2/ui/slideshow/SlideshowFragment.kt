@@ -45,10 +45,10 @@ class SlideshowFragment : Fragment() {
                 var carList = comidas[position].split(" ")
                 var str = "${carList[1]} ${carList[0]} en $${carList[2]}"
                 AlertDialog.Builder(requireContext())
-                    .setTitle("Vender auto")
-                    .setMessage("¿Está seguro de vender el ${str}?")
+                    .setTitle("Eliminar Platillo")
+                    .setMessage("¿Está seguro de eliminar ${str}?")
                     .setPositiveButton("Sí") { d, i ->
-                        borrarAuto(position)
+                        borrar(position)
                         d.dismiss()
                     }
                     .setNegativeButton("Cancelar",{d,i->d.dismiss()})
@@ -83,7 +83,7 @@ class SlideshowFragment : Fragment() {
         }
     }
 
-    private fun borrarAuto(i:Int) {
+    private fun borrar(i:Int) {
         var c = ""
         comidas.removeAt(i)
         comidas.forEach{
@@ -99,7 +99,7 @@ class SlideshowFragment : Fragment() {
             archivo.flush()
             archivo.close()
             adaptadorComida.notifyDataSetChanged()
-            Toast.makeText(requireContext(), "Auto vendido exitosamente", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Eliminado exitosamente", Toast.LENGTH_SHORT).show()
         }catch (e:Exception){
             Log.i("Error Borrar 100",e.message+"")
         }

@@ -9,7 +9,7 @@
 
     <string name="menu_catalogo">Catalogo</string>
     <string name="menu_agregar">Agregar</string>
-    <string name="menu_editar">Editar</string>
+    <string name="menu_editar">Eliminar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

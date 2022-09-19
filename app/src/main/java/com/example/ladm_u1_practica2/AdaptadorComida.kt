@@ -22,15 +22,15 @@ class AdaptadorComida(private val list: ArrayList<String>,  itemListener: onItem
         val comida = list[i]
         var listacomida = comida.split(" ")
 
-        holder.nombre.text = listacomida[0].replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
-        holder.tipo.text = listacomida[1].replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+        holder.tipo.text = listacomida[0].replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+        holder.nombre.text = listacomida[1].replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
         holder.precio.text = "$ ${listacomida[2].replaceFirstChar { if (it.isLowerCase()) it.titlecase(
             Locale.getDefault()) else it.toString() }}"
         when (listacomida[1].lowercase()){
-            "Pozole"->{holder.img.setImageResource(R.drawable.icono_comida)}
-            "Pizza"->{holder.img.setImageResource(R.drawable.icono_comida)}
+            "Pozole"->{holder.img.setImageResource(R.drawable.pozole)}
+            "Pizza"->{holder.img.setImageResource(R.drawable.pizza)}
             else->{
-                holder.img.setImageResource(R.drawable.icono_comida)
+                holder.img.setImageResource(R.drawable.food)
             }
         }
     }

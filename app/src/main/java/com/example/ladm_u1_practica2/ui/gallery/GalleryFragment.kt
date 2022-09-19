@@ -68,13 +68,15 @@ class GalleryFragment : Fragment() {
             }
             val archivo = OutputStreamWriter(requireActivity().openFileOutput("archivo.txt",0))
 
-            cadena += binding.tipoplatillo.text.toString().trim()+" "+
-                    binding.precio.text.toString()+" "+
-                    binding.nombreplatillo.text.toString().trim()+"\n"
+            cadena += binding.nombreplatillo.text.toString().trim()+" "+
+                    binding.tipoplatillo.text.toString().trim()+" "+
+                    binding.precio.text.toString()+" "
 
             archivo.write(cadena)
             archivo.flush()
             archivo.close()
+
+
 
             binding.tipoplatillo.setText("")
             binding.nombreplatillo.setText("")

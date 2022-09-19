@@ -14,12 +14,12 @@
             android:title="@string/menu_agregar" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_baseline_edit_24"
+            android:icon="@drawable/ic_baseline_delete_24"
             android:title="@string/menu_editar" />
         <item
             android:id="@+id/eliminarFragment"
-            android:title="Eliminar"
-            android:icon="@drawable/ic_baseline_delete_24"
+            android:title="Editar"
+            android:icon="@drawable/ic_baseline_edit_24"
             />
     </group>
 </menu>
