@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             Log.i("MA 42","Existe.")
         } else {
             Log.i("MA 44","No existe.")
-            guardarEnArchivo("Pozole Principal 90.000\nRefresco Bebida 20.000")
+            guardarEnArchivo("Pozole P.Fuerte 90.00\nRefresco Bebida 20.00")
         }
 
 

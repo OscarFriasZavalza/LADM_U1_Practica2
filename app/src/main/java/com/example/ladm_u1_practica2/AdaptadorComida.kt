@@ -27,8 +27,12 @@ class AdaptadorComida(private val list: ArrayList<String>,  itemListener: onItem
         holder.precio.text = "$ ${listacomida[2].replaceFirstChar { if (it.isLowerCase()) it.titlecase(
             Locale.getDefault()) else it.toString() }}"
         when (listacomida[1].lowercase()){
-            "Pozole"->{holder.img.setImageResource(R.drawable.pozole)}
-            "Pizza"->{holder.img.setImageResource(R.drawable.pizza)}
+            "pozole"->{holder.img.setImageResource(R.drawable.pozole)}
+            "pizza"->{holder.img.setImageResource(R.drawable.imagenpizzas)}
+            "pastel"->{holder.img.setImageResource(R.drawable.pastel1)}
+            "refresco"->{holder.img.setImageResource(R.drawable.refresco)}
+            "hamburguesa"->{holder.img.setImageResource(R.drawable.burger)}
+
             else->{
                 holder.img.setImageResource(R.drawable.food)
             }

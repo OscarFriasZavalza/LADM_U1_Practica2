@@ -79,7 +79,7 @@ class ActualizarFragment : Fragment() {
         }
     }
 
-    fun showdialog(car:String, i:Int) {
+    fun showdialog(com:String, i:Int) {
 
         val builder = AlertDialog.Builder(requireContext())
             .create()
@@ -92,11 +92,11 @@ class ActualizarFragment : Fragment() {
         val nombre = view.findViewById<EditText>(R.id.nombreplatillo)
         val precio = view.findViewById<EditText>(R.id.precio)
 
-        //Log.i("Update ",""+car_list.size+" "+car)
-        val carList = car.split(" ")
-        tipo.setText(carList[0])
-        nombre.setText(carList[1])
-        precio.setText(carList[2])
+
+        val comList = com.split(" ")
+        tipo.setText(comList[1])
+        nombre.setText(comList[0])
+        precio.setText(comList[2])
 
         builder.setView(view)
         button.setOnClickListener {
@@ -104,7 +104,7 @@ class ActualizarFragment : Fragment() {
             comidas.forEach {
                 c+=it+"\n"
             }
-            comidas[i] = tipo.text.toString().trim() +" "+ nombre.text.toString().trim()+" "+ precio.text.toString().trim()
+            comidas[i] = nombre.text.toString().trim() +" "+ tipo.text.toString().trim()+" "+ precio.text.toString().trim()
             adapterComida.notifyDataSetChanged()
             guardarEnArchivo()
             Toast.makeText(requireContext(),"Comida Actualizada", Toast.LENGTH_SHORT).show()
