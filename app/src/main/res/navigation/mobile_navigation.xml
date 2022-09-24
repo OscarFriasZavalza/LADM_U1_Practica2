@@ -23,8 +23,8 @@
         android:label="@string/menu_editar"
         tools:layout="@layout/fragment_slideshow" />
     <fragment
-        android:id="@+id/eliminarFragment"
-        android:name="com.example.ladm_u1_practica2.EliminarFragment"
-        android:label="fragment_eliminar"
-        tools:layout="@layout/fragment_eliminar" />
+        android:id="@+id/actualizarFragment"
+        android:name="com.example.ladm_u1_practica2.ui.editar.ActualizarFragment"
+        android:label="fragment_actualizar"
+        tools:layout="@layout/fragment_actualizar" />
 </navigation>

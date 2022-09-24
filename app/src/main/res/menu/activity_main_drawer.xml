@@ -17,7 +17,7 @@
             android:icon="@drawable/ic_baseline_delete_24"
             android:title="@string/menu_editar" />
         <item
-            android:id="@+id/eliminarFragment"
+            android:id="@+id/actualizarFragment"
             android:title="Editar"
             android:icon="@drawable/ic_baseline_edit_24"
             />
